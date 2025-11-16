@@ -1,6 +1,6 @@
-# Caso_Americanas_Industria_Fundos_Credito-Privado
+# Caso Americanas & Indústria de Fundos de Crédito Privado (Brasil, 2022–2024)
 
-Trabalho de Conclusão de Curso em Engenharia Física – UFSCar  
+Trabalho de Conclusão de Curso em Engenharia Física – Universidade Federal de São Carlos (UFSCar)  
 Autor: Felipe Faria Cazetta  
 
 ---
