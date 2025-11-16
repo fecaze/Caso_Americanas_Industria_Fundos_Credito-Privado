@@ -69,24 +69,26 @@ A partir disso, são construídas:
 ### 1. Consolidação e pré-processamento
 
 1. Merge entre:
-   - base cadastral dos fundos (filtros acima)  
-   - histórico de cotas / capliq / PL (2022–2024)
+   - base cadastral dos fundos (filtros acima);  
+   - histórico de cotas / capliq / PL (2022–2024).
+
 2. Cálculo do **retorno diário** dos fundos:
-   - \( R_{i,t} = \frac{Cota_{i,t}}{Cota_{i,t-1}} - 1 \)
-3. Construção do benchmark:
-   - Retorno diário do **CDI**
-   - Retorno diário da **SELIC**
+   - $$R_{i,t} = \frac{Cota_{i,t}}{Cota_{i,t-1}} - 1$$
+
+4. Construção dos benchmarks:
+   - Retorno diário do **CDI**: $R^{CDI}_t$  
+   - Retorno diário da **SELIC**: $R^{SELIC}_t$
 
 ---
 
 ### 2. Análise Descritiva
 
-Para cada grupo (Top 15 x Bottom 15) e, quando relevante, por fundo:
+Para cada grupo (Top 15 × Bottom 15) e, quando relevante, por fundo:
 
-- **Retorno acumulado** no período, com comparação versus **CDI acumulado**.
-- Evolução da **PL consolidada** (nível e crescimento).
+- **Retorno acumulado** no período, com comparação versus **CDI acumulado**.  
+- Evolução da **PL consolidada** (nível e crescimento).  
 - **Captação líquida acumulada**, com foco em:
-  - períodos pré e pós-eventos
+  - períodos pré e pós-eventos;  
   - possíveis migrações de PL entre grupos.
 
 ---
@@ -99,32 +101,36 @@ Evento principal:
 
 #### 3.1. Janela de evento
 
-- Janela principal: **[-20, +60] dias úteis** ao redor do evento.
+- Janela principal: **[-20, +60] dias úteis** ao redor do evento.  
 - Possibilidade de testar outras janelas (ex.: [-10, +20]) em análises de robustez.
 
 #### 3.2. Métricas
 
-Para cada fundo \( i \) e dia \( t \):
+Para cada fundo $i$ e dia $t$:
 
 - **Retorno anormal (AR)**  
-  \[
-  AR_{i,t} = R_{i,t} - R^{CDI}_t
-  \]
 
-- **AAR (Average Abnormal Return)** – média de AR por grupo (Top x Bottom) em cada dia da janela.
+  $$AR_{i,t} = R_{i,t} - R^{CDI}_t$$
 
-- **CAAR (Cumulative AAR)** – soma acumulada da AAR ao longo da janela de evento.
+- **AAR (Average Abnormal Return)** – média de AR por grupo (Top × Bottom) em cada dia da janela:
+
+  $$AAR_t = \frac{1}{N} \sum_{i=1}^{N} AR_{i,t}$$
+
+- **CAAR (Cumulative Average Abnormal Return)** – soma acumulada da AAR ao longo da janela:
+
+  $$CAAR_{t_1,t_2} = \sum_{t=t_1}^{t_2} AAR_t$$
 
 #### 3.3. Testes estatísticos
 
-- Testes de significância para verificar se:
-  - AAR/CAAR diferem estatisticamente de zero.
-  - Há diferença relevante entre **Top 15** e **Bottom 15**.
+Testes de significância para verificar se:
+
+- $AAR_t$ e $CAAR_{t_1,t_2}$ diferem estatisticamente de zero;  
+- Existe diferença relevante entre **Top 15** e **Bottom 15**.
 
 Metodologias previstas:
 
-- **t-test** (Student / Welch) para AAR/CAAR.
-- (Opcional / robustez): uso de **erros-padrão robustos** (ex.: Newey–West) para lidar com autocorrelação/heteroscedasticidade.
+- **t-test** (Student / Welch) aplicados a $AAR_t$ e $CAAR_{t_1,t_2}$;  
+- (Opcional – robustez): uso de **erros-padrão robustos** (ex.: Newey–West) para lidar com autocorrelação e heteroscedasticidade nas séries de retornos.
 
 ---
 
@@ -132,18 +138,25 @@ Metodologias previstas:
 
 Cálculo de métricas de risco para fundos e grupos:
 
-- **Volatilidade histórica** (desvio-padrão dos retornos, em base diária e escalada para mensal/anual quando necessário).
-- **Máximo drawdown** (maior queda acumulada a partir de um pico).
-- **Sharpe Ratio** ou **Índice de Informação**:
-  - \[
-    \text{Sharpe} = \frac{R_{fundo} - R_{CDI}}{\sigma_{fundo}}
-    \]
-- Comparação entre grupos:
-  - **Retorno bruto**
-  - **Retorno em excesso sobre CDI**
-  - **Retorno ajustado ao risco**
+- **Volatilidade histórica** (desvio-padrão dos retornos, em base diária e escalada para mês/ano quando necessário).  
+- **Máximo drawdown** (maior queda acumulada a partir de um pico da série de cota).  
+- **Sharpe Ratio** ou **Índice de Informação**, por exemplo:
 
-Objetivo: verificar se **Top 15** de gestoras entrega melhor relação retorno–risco que **Bottom 15**, especialmente em períodos de estresse.
+  $$\text{Sharpe} = \frac{R_{\text{fundo}} - R_{\text{CDI}}}{\sigma_{\text{fundo}}}$$
+
+Onde:
+
+- $R_{\text{fundo}}$ é o retorno médio do fundo (ou grupo);  
+- $R_{\text{CDI}}$ é o retorno médio do CDI no mesmo período;  
+- $\sigma_{\text{fundo}}$ é o desvio-padrão dos retornos do fundo.
+
+Comparações entre grupos:
+
+- **Retorno bruto**;  
+- **Retorno em excesso sobre CDI**;  
+- **Retorno ajustado ao risco** (Sharpe / Índice de Informação).
+
+Objetivo: verificar se o grupo de **gestoras Top 15** entrega melhor relação retorno–risco do que o grupo **Bottom 15**, especialmente em períodos de estresse.
 
 ---
 
@@ -151,13 +164,15 @@ Objetivo: verificar se **Top 15** de gestoras entrega melhor relação retorno�
 
 Análise dinâmica da reação dos investidores:
 
-- Evolução do **PL total** dos grupos no tempo.
+- Evolução do **PL total** dos grupos no tempo;  
 - **Captação líquida mensal** (e acumulada):
-  - Antes do evento (Americanas)
-  - Após o evento (jan/2023 em diante)
-- Identificação de:
-  - **Saída forte de recursos** dos fundos mais afetados.
-  - **Possível migração de PL** de gestoras menor porte (Bottom) para maior porte (Top).
+  - Antes do evento (Americanas);  
+  - Após o evento (jan/2023 em diante).
+
+Identificação de:
+
+- **Saída forte de recursos** dos fundos mais afetados;  
+- **Possível migração de PL** de gestoras de menor porte (Bottom) para gestoras de maior porte (Top).
 
 ---
 
@@ -165,13 +180,13 @@ Análise dinâmica da reação dos investidores:
 
 Além do caso Americanas (jan/2023), a infraestrutura do projeto permite analisar:
 
-- **Light (jun/2023)** – evento corporativo relevante no setor elétrico.
+- **Light (jun/2023)** – evento corporativo relevante no setor elétrico;  
 - **Mudanças regulatórias**:
-  - Ex.: **Resolução CVM 175** (2023–2024) e seus impactos na indústria de fundos.
+  - Ex.: **Resolução CVM 175** (2023–2024) e seus impactos na indústria de fundos;  
 - **Decisões de política monetária**:
   - Ciclo de cortes da **SELIC (2023–2024)** e seus efeitos sobre fundos de crédito privado.
 
-Esses eventos podem ser tratados como janelas adicionais de estudo de evento, utilizando a mesma lógica de AR, AAR, CAAR e testes estatísticos.
+Esses eventos podem ser tratados como janelas adicionais de estudo de evento, utilizando a mesma lógica de $AR_{i,t}$, $AAR_t$, $CAAR_{t_1,t_2}$ e testes estatísticos associados.
 
 ---
 
