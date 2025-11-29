@@ -17,8 +17,8 @@ O repositório foca principalmente no **caso Americanas (jan/2023)** como estudo
 
 Mensurar e explicar o impacto de **eventos corporativos** e **macroeconômicos** sobre fundos brasileiros de renda fixa (segmento de **crédito privado**, segundo a CVM) entre **2022 e 2024**, com ênfase em diferenças entre:
 
-- **Gestoras Top 15** por PL consolidado (31/12/2024)  
-- **Gestoras Bottom 15** por PL consolidado (31/12/2024)  
+- **Gestoras Top 10** por PL consolidado (31/12/2024)  
+- **Gestoras Bottom 10** por PL consolidado (31/12/2024)  
 
 Principais perguntas empíricas:
 
