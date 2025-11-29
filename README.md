@@ -83,7 +83,7 @@ A partir disso, são construídas:
 
 ### 2. Análise Descritiva
 
-Para cada grupo (Top 15 × Bottom 15) e, quando relevante, por fundo:
+Para cada grupo (Top 10 × Bottom 10) e, quando relevante, por fundo:
 
 - **Retorno acumulado** no período, com comparação versus **CDI acumulado**.  
 - Evolução da **PL consolidada** (nível e crescimento).  
