@@ -58,8 +58,8 @@ A partir disso, são construídas:
 
 - Cálculo do **PL total por gestora em 31/12/2024**
 - Definição dos grupos:
-  - **Top 15 gestoras** por PL
-  - **Bottom 15 gestoras** por PL  
+  - **Top 10 gestoras** por PL
+  - **Bottom 10 gestoras** por PL  
 - (Opcional) Top 20 gestores / fundos por PL para análises adicionais de concentração.
 
 ---
@@ -125,7 +125,7 @@ Para cada fundo $i$ e dia $t$:
 Testes de significância para verificar se:
 
 - $AAR_t$ e $CAAR_{t_1,t_2}$ diferem estatisticamente de zero;  
-- Existe diferença relevante entre **Top 15** e **Bottom 15**.
+- Existe diferença relevante entre **Top 10** e **Bottom 10**.
 
 Metodologias previstas:
 
@@ -156,7 +156,7 @@ Comparações entre grupos:
 - **Retorno em excesso sobre CDI**;  
 - **Retorno ajustado ao risco** (Sharpe / Índice de Informação).
 
-Objetivo: verificar se o grupo de **gestoras Top 15** entrega melhor relação retorno–risco do que o grupo **Bottom 15**, especialmente em períodos de estresse.
+Objetivo: verificar se o grupo de **gestoras Top 10** entrega melhor relação retorno–risco do que o grupo **Bottom 10**, especialmente em períodos de estresse.
 
 ---
 
