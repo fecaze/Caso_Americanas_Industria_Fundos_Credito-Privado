@@ -176,11 +176,12 @@ Identificação de:
 
 ---
 
-## 📌 Outros eventos considerados
+## 📌 Outros eventos que são onbservados na amostra indiretamente
 
-Além do caso Americanas (jan/2023), a infraestrutura do projeto permite analisar:
+Além do caso Americanas (jan/2023), a infraestrutura do projeto permite olhar:
 
-- **Light (jun/2023)** – evento corporativo relevante no setor elétrico;  
+- **Light (jun/2023)** – evento corporativo relevante no setor elétrico;
+- **Eleições EUA (Dez/2024)** – período eleitoral americano;  
 - **Mudanças regulatórias**:
   - Ex.: **Resolução CVM 175** (2023–2024) e seus impactos na indústria de fundos;  
 - **Decisões de política monetária**:
