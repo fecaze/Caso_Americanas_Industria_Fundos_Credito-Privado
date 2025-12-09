@@ -2,6 +2,7 @@
 
 Trabalho de Conclusão de Curso em Engenharia Física – Universidade Federal de São Carlos (UFSCar)  
 Autor: Felipe Faria Cazetta
+
 Orientador: Prof. Dr. Michel Helcias Montoril - Departamento de Estatística/DEs-UFSCar
 
 ---
