@@ -212,3 +212,6 @@ Esses eventos podem ser tratados como janelas adicionais de estudo de evento, ut
 │   ├── figures/      # Gráficos usados no TCC
 │   └── tables/       # Tabelas de resultados
 └── README.md
+|
+└── Monografia_TCC_Felipe-Faria-Cazetta.pdf        # Monografia completa, corrigida e avaliada
+└── Apresentacao_TCC_Felipe-Faria-Cazetta.pdf      # Apresentação utilizada para a defesa do trabalho
