@@ -191,7 +191,7 @@ Esses eventos podem ser tratados como janelas adicionais de estudo de evento, ut
 
 ---
 
-## 🗂 Estrutura do Repositório (sugestão)
+## 🗂 Estrutura do Repositório
 
 ```text
 .
